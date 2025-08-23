@@ -23,6 +23,18 @@
           "count": 0
         }
       ]
+    },
+    {
+      "id": "5n399xMc-iBKepVYuSSFn",
+      "name": "",
+      "email": "",
+      "password": "",
+      "carts": [
+        {
+          "productId": null,
+          "count": 0
+        }
+      ]
     }
   ],
   "products": [
