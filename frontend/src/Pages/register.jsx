@@ -2,17 +2,19 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { asyncRegisterUser } from "../Store/Actions/userAction";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { register, handleSubmit, reset } = useForm();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleRegister = (data) => {
     data.id = nanoid();
     data.carts = [{ productId: null, count: 0 }];
     dispatch(asyncRegisterUser(data));
     reset();
+    navigate("/login")
   };
 
   return (
