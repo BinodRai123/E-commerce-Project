@@ -12,11 +12,10 @@ const Login = () => {
 
   const handleRegister = async (data) => {
     const response = await dispatch(asyncLoginUser(data));
-    if(response.success ){
-        navigate("/");
-        reset();
-    }
-    else setError(response.message);
+    if (response.success) {
+      navigate("/");
+      reset();
+    } else setError(response.message);
   };
   return (
     <>
@@ -25,10 +24,16 @@ const Login = () => {
           {...register("email")}
           type="email"
           placeholder="abc@gmail.com"
+          required
         />
-        <input {...register("password")} type="password" placeholder="*****" />
+        <input
+          {...register("password")}
+          type="password"
+          placeholder="*****"
+          required
+        />
 
-        <input type="submit" />
+        <input type="submit" value={"login"} />
       </form>
 
       <p className="text-xl text-red-600">{error ? error : ""}</p>

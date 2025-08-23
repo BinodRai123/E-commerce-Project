@@ -14,7 +14,7 @@ const Register = () => {
     data.carts = [{ productId: null, count: 0 }];
     dispatch(asyncRegisterUser(data));
     reset();
-    navigate("/login")
+    navigate("/login");
   };
 
   return (
@@ -24,15 +24,22 @@ const Register = () => {
           {...register("name")}
           type="text"
           placeholder="Enter your name"
+          required
         />
         <input
           {...register("email")}
           type="email"
           placeholder="abc@gmail.com"
+          required
         />
-        <input {...register("password")} type="password" placeholder="*****" />
+        <input
+          {...register("password")}
+          type="password"
+          placeholder="*****"
+          required
+        />
 
-        <input type="submit" />
+        <input type="submit" value={"Register"} />
       </form>
 
       <p>
