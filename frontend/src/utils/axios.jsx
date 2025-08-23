@@ -6,7 +6,7 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   function (config) {
-    console.log("this is request -->", config)
+    return config;
   },
   function (error) {
     return Promise.reject(error);
@@ -15,7 +15,7 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   function (response) {
-    console.log("this is response -->", config);
+    return response;
   },
   function (error) {
     return Promise.reject(error);

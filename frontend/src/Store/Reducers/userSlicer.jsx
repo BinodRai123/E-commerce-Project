@@ -10,6 +10,9 @@ export const UserSlice = createSlice({
   reducers: {
     loadUser: (state, action) => {
         state.user = action.payload;
+    },
+    removeUser: (state, action) => {
+      state.user = null;
     }
   },
 })

@@ -1,13 +1,18 @@
 import { nanoid } from "@reduxjs/toolkit";
-import {useForm} from "react-hook-form"
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { asyncRegisterUser } from "../Store/Actions/userAction";
 
 const Register = () => {
-  const {register, handleSubmit, reset} = useForm();
+  const { register, handleSubmit, reset } = useForm();
+  const dispatch = useDispatch();
 
   const handleRegister = (data) => {
     data.id = nanoid();
+    data.carts = [{productId: null, count: 0}]
+    dispatch(asyncRegisterUser(data));
     reset();
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit(handleRegister)}>
@@ -16,9 +21,8 @@ const Register = () => {
       <input {...register("password")} type="password" placeholder="*****" />
 
       <input type="submit" />
-
     </form>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
