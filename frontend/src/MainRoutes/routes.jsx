@@ -1,10 +1,14 @@
+import { lazy } from "react"
 import { Routes, Route } from "react-router-dom"
-import  Register  from "../Pages/register"
-import  Home  from "../Pages/home"
-import Login from "../Pages/login"
-import Products from "../Pages/products"
-import LogOut from "../Pages/logOut"
 import AuthWrapper from "./authWrapper"
+
+const Home = lazy(() => import("../Pages/home"));
+const Products = lazy(() => import("../Pages/products"));
+const Register = lazy(() => import("../Pages/register"));
+const Login = lazy(() => import("../Pages/login"));
+const LogOut = lazy(() => import("../Pages/logOut"));
+
+
 
 const AllRoutes = () => {
   return (
