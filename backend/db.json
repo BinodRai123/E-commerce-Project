@@ -59,6 +59,18 @@
           "count": 0
         }
       ]
+    },
+    {
+      "id": "oQL9HmCspdpiZsdPhu4S2",
+      "name": "amir",
+      "email": "amir@gmail.com",
+      "password": "0000",
+      "carts": [
+        {
+          "productId": null,
+          "count": 0
+        }
+      ]
     }
   ],
   "products": [
