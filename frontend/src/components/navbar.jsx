@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const {user} = useSelector(state => state.userReducer);
-  console.log(user)
   return (
     <nav className="flex gap-5 text-xl justify-center">
       <NavLink className={(e) => (e.isActive ? "border-b" : "")} to="/">

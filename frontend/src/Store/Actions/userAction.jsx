@@ -15,7 +15,6 @@ export const asyncLoginUser = (user) => async(dispatch, getstate) => {
     try {
         const {data} = await axios.get(`http://localhost:3000/users?email=${user.email}&password=${user.password}`)
         if(data.length > 0){
-            localStorage.setItem("user", JSON.stringify(data[0]));
             dispatch(loadUser(data[0]));
             return {success: true}
         }
