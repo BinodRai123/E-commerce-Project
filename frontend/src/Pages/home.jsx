@@ -63,13 +63,38 @@ const Home = () => {
         </div>
 
         {/* Advertisement-section */}
-        <div className="advertisement-section  border-b-2 border-gray-300">
+        <div className="advertisement-section">
           <img
-            className="object-contain aspect-video"
+            className="object-contain aspect-[16/9] md:object-contain md:aspect-video"
             src="/src/assets/advertisement/advertisement_img.png"
             alt=""
           />
         </div>
+
+        {/* Our Product section */}
+        <div className="py-10 border-b-2 border-gray-300">
+          <div className="flex gap-5 items-center">
+            <div className="h-10 rounded w-5 bg-red-500"></div>
+            <small className="text-red-500 text-xl">Our Products</small>
+          </div>
+          <h1 className=" font-medium text-4xl my-5 md:my-8">Explore Our Products</h1>
+
+          {/* product card lists */}
+          <div className="overflow-x-auto w-full">
+            <div className="flex space-x-4 px-2">
+              {categories.map((category, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-48 sm:w-56 md:w-60 lg:w-64"
+                >
+                  <ProductCard />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        
       </div>
     </div>
   );
