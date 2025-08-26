@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white px-6 md:px-12 lg:px-24 py-12 text-sm">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+    <footer className="bg-black text-white px-6 md:px-12 lg:px-20 py-12 text-sm">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
 
         {/* Exclusive / Subscribe */}
         <div>
@@ -65,18 +65,18 @@ const Footer = () => {
             <img
               src="https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=https://play.google.com"
               alt="QR Code"
-              className="w-16 h-16"
+              className="w-32 aspect-square object-contain`"
             />
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-4">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                 alt="Google Play"
-                className="h-10"
+                className="grow"
               />
               <img
                 src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                 alt="App Store"
-                className="h-10"
+                className="grow"
               />
             </div>
           </div>
