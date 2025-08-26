@@ -10,7 +10,7 @@
 
 
 .button {
-    @apply py-2 px-4 text-sm bg-[#db4444] text-white;
+    @apply py-2 px-4 bg-[#db4444] text-white cursor-pointer active:scale-95 transition-all ease-out;
 }
 
 .register-sideimages {
