@@ -13,58 +13,10 @@
       ]
     },
     {
-      "id": "3usdjfVwz9rIMrl-pr8M8",
-      "name": "ram",
-      "email": "abc@gmail.com",
-      "password": "123",
-      "carts": [
-        {
-          "productId": null,
-          "count": 0
-        }
-      ]
-    },
-    {
-      "id": "me_8xWD9r8hZXwaKSIzIQ",
-      "name": "",
-      "email": "",
-      "password": "",
-      "carts": [
-        {
-          "productId": null,
-          "count": 0
-        }
-      ]
-    },
-    {
-      "id": "2eSA5JuD2Ei3C8XCUYWkA",
-      "name": "ram",
-      "email": "ram@gmail.com",
-      "password": "0000",
-      "carts": [
-        {
-          "productId": null,
-          "count": 0
-        }
-      ]
-    },
-    {
-      "id": "hmXW2fVa0jHHofUQLfTgl",
-      "name": "amir",
-      "email": "amir@gmail.com",
-      "password": "1111",
-      "carts": [
-        {
-          "productId": null,
-          "count": 0
-        }
-      ]
-    },
-    {
-      "id": "oQL9HmCspdpiZsdPhu4S2",
-      "name": "amir",
-      "email": "amir@gmail.com",
-      "password": "0000",
+      "id": "nZoBWDV16D8bm3MxddAdA",
+      "name": "binod",
+      "email": "binod@gmail.com",
+      "password": "55555",
       "carts": [
         {
           "productId": null,

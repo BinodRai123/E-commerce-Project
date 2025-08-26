@@ -19,7 +19,7 @@ const Navbar = () => {
       <div
         className="sm:hidden absolute right-3 flex items-center justify-center bg-gray-600 size-10 text-white rounded-full cursor-pointer"
         onClick={toggleSidebar}
-      >
+      > 
         <i className="ri-menu-line text-2xl"></i>
       </div>
 
