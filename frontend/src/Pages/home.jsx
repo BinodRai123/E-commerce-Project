@@ -41,6 +41,13 @@ const Home = () => {
 
         {/* Product cards */}
         <div className="mt-10">
+          <div className="flex gap-5 items-center">
+            <div className="h-10 rounded w-5 bg-red-500"></div>
+            <small className="text-red-500 text-xl">Today's</small>
+          </div>
+          <h1 className=" font-medium text-4xl my-5 md:my-8">Flash Sales</h1>
+
+          {/* product card lists */}
           <div className="overflow-x-auto w-full">
             <div className="flex space-x-4 px-2">
               {categories.map((category, index) => (
@@ -51,7 +58,6 @@ const Home = () => {
                   <ProductCard />
                 </div>
               ))}
-
             </div>
           </div>
         </div>
