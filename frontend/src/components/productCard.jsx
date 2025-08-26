@@ -1,6 +1,9 @@
 import { Heart, Eye } from "lucide-react";
+import { useState } from "react";
 
 const ProductCard = () => {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <div className="relative inline-block max-w-xs bg-white shadow-md rounded-2xl">
       {/* Discount Badge */}
@@ -10,10 +13,18 @@ const ProductCard = () => {
 
       {/* Product Image */}
       <div className="flex justify-center items-center p-4">
+        {!loaded && (
+          <div className="animate-pulse bg-gray-300 w-full h-48 md:h-56 lg:h-64" />
+        )}
+
         <img
           src="/src/assets/productCard-image/product_image.jpg" // replace with your image path
           alt="HAVIT HV-G92 Gamepad"
-          className="w-full h-48 object-contain"
+          className={`object-cover w-full transition-opacity duration-500 ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
+          loading="lazy"
+          onLoad={() => setLoaded(true)}
         />
 
         {/* Action Buttons */}
@@ -53,6 +64,6 @@ const ProductCard = () => {
       </div>
     </div>
   );
-}
+};
 
 export default ProductCard;
