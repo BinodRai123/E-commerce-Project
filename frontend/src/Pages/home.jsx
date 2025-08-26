@@ -40,7 +40,7 @@ const Home = () => {
         </div>
 
         {/* Product cards */}
-        <div className="mt-10">
+        <div className="py-10 border-b-2 border-gray-300">
           <div className="flex gap-5 items-center">
             <div className="h-10 rounded w-5 bg-red-500"></div>
             <small className="text-red-500 text-xl">Today's</small>
@@ -60,6 +60,15 @@ const Home = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Advertisement-section */}
+        <div className="advertisement-section  border-b-2 border-gray-300">
+          <img
+            className="object-contain aspect-video"
+            src="/src/assets/advertisement/advertisement_img.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
