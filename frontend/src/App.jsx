@@ -1,5 +1,5 @@
-import Footer from "./components/footer";
-import Navbar from "./components/navbar";
+import Footer from "./components/footer/footer";
+import Navbar from "./components/navbar/navbar";
 import AllRoutes from "./MainRoutes/routes";
 
 const App = () => {

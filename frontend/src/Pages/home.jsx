@@ -1,7 +1,7 @@
 import { useState } from "react";
-import MobileCategorybar from "../components/mobileCategorybar";
-import SidebarCategory from "../components/sidebarCategory";
-import ProductCard from "../components/productCard";
+import MobileCategorybar from "../components/category/mobileCategorybar";
+import SidebarCategory from "../components/category/sidebarCategory";
+import ProductCard from "../components/card/productCard";
 import Services from "../components/services";
 
 const categories = [

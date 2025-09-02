@@ -28,10 +28,9 @@ const Footer = () => {
         {/* Support */}
         <div>
           <h3 className="text-lg font-semibold mb-3">Support</h3>
-          <p className="mb-1">111 Bijoy sarani, Dhaka,</p>
-          <p className="mb-1">DH 1515, Bangladesh.</p>
-          <p className="mb-1">exclusive@gmail.com</p>
-          <p className="mb-1">+88015-88888-9999</p>
+          <p className="mb-1">Gaighat-15, Nepal.</p>
+          <p className="mb-1">Binod@gmail.com</p>
+          <p className="mb-1">+985741523</p>
         </div>
 
         {/* Account */}
