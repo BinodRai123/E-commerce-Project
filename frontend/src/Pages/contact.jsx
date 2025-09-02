@@ -1,7 +1,9 @@
+import ContactSection from "../components/contact/contactSection"
+
 const Contact = () => {
   return (
-    <div>
-      contact
+    <div className="min-h-screen flex justify-center items-center my-10">
+      <ContactSection />
     </div>
   )
 }
