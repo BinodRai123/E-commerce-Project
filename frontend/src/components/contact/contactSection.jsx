@@ -35,24 +35,24 @@ const ContactSection = () => {
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="w-full md:w-[60%] shadow-xl rounded-lg p-6">
+        <div className="w-full md:w-[60%] shadow-md rounded-lg p-6">
           <form className="flex flex-col gap-4">
             {/* Top Row Inputs */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <input
                 type="text"
                 placeholder="Your Name *"
-                className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className=" px-4 bg-[#f5f5f5] py-2 focus:outline-none"
               />
               <input
                 type="email"
                 placeholder="Your Email *"
-                className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className=" px-4 bg-[#f5f5f5] py-2 focus:outline-none"
               />
               <input
                 type="tel"
                 placeholder="Your Phone *"
-                className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className=" px-4 bg-[#f5f5f5] py-2 focus:outline-none"
               />
             </div>
 
@@ -60,7 +60,7 @@ const ContactSection = () => {
             <textarea
               rows="6"
               placeholder="Your Message"
-              className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+              className="  px-4 bg-[#f5f5f5] py-2 focus:outline-none "
             ></textarea>
 
             {/* Submit Button */}
