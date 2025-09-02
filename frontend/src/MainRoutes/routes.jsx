@@ -4,12 +4,12 @@ import AuthWrapper from "./authWrapper"
 import UnAuthWrapper from "./unAuthWrapper";
 import Contact from "../Pages/contact";
 import PagenotFound from "../Pages/pagenotFound";
+import Account from "../Pages/logOut";
 
 const Home = lazy(() => import("../Pages/home"));
 const Products = lazy(() => import("../Pages/products"));
 const Register = lazy(() => import("../Pages/register"));
 const Login = lazy(() => import("../Pages/login"));
-const LogOut = lazy(() => import("../Pages/logOut"));
 
 
 
@@ -21,7 +21,7 @@ const AllRoutes = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/register" element={<UnAuthWrapper><Register /></UnAuthWrapper>} />
       <Route path="/login" element={<UnAuthWrapper><Login /></UnAuthWrapper>} />
-      <Route path="/logout" element={<AuthWrapper><LogOut /></AuthWrapper>} />
+      <Route path="/account" element={<AuthWrapper><Account /></AuthWrapper>} />
 
 
       <Route path="*" element={<PagenotFound />} />

@@ -1,9 +1,9 @@
 import {useDispatch} from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { asyncLogoutUser } from "../Store/Actions/userAction";
-import Account from "../components/userAccount/account";
+import AccountDashbard from "../components/userAccount/account";
 
-const LogOut = () => {
+const Account = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const logoutHandler = () => {
@@ -12,9 +12,9 @@ const LogOut = () => {
     }
 
   return <>
-  <Account />
+  <AccountDashbard />
     <button type="button" onClick={logoutHandler}>Log out</button>
   </>
 }
 
-export default LogOut
+export default Account

@@ -1,26 +1,33 @@
-import React, { useState } from 'react';
+import { useState } from "react";
+import MobileHeader from "./mobileeader";
 
-const Account = () => {
-  const [activeTab, setActiveTab] = useState('My Profile');
+const AccountDashbard = () => {
+  const [activeTab, setActiveTab] = useState("My Profile");
 
   const navItems = [
-    { title: 'Manage My Account', items: ['My Profile', 'Address Book', 'My Payment Options'] },
-    { title: 'My Orders', items: ['My Returns', 'My Cancellations', 'My Wishlist'] },
+    {
+      title: "Manage My Account",
+      items: ["My Profile", "Address Book", "My Payment Options"],
+    },
+    {
+      title: "My Orders",
+      items: ["My Returns", "My Cancellations", "My Wishlist"],
+    },
   ];
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'My Profile':
+      case "My Profile":
         return <ProfileForm />;
-      case 'Address Book':
+      case "Address Book":
         return <div>Address Book content goes here...</div>;
-      case 'My Payment Options':
+      case "My Payment Options":
         return <div>Payment Options content goes here...</div>;
-      case 'My Returns':
+      case "My Returns":
         return <div>My Returns content goes here...</div>;
-      case 'My Cancellations':
+      case "My Cancellations":
         return <div>My Cancellations content goes here...</div>;
-      case 'My Wishlist':
+      case "My Wishlist":
         return <div>My Wishlist content goes here...</div>;
       default:
         return null;
@@ -30,22 +37,7 @@ const Account = () => {
   return (
     <div className="min-h-screen bg-neutral-100 p-4 font-sans text-gray-800 lg:p-10">
       {/* Mobile Header */}
-      <div className="mb-4 flex items-center justify-between rounded-lg p-4 shadow-lg md:hidden">
-        <h1 className="text-sm sm:text-xl">My Account</h1>
-        <select
-          value={activeTab}
-          onChange={(e) => setActiveTab(e.target.value)}
-          className="rounded-md border p-2"
-        >
-          {navItems.flatMap(group => [
-            <optgroup key={group.title} label={group.title}>
-              {group.items.map(item => (
-                <option key={item} value={item}>{item}</option>
-              ))}
-            </optgroup>
-          ])}
-        </select>
-      </div>
+      <MobileHeader navItems={navItems} setActiveTab={setActiveTab} />
 
       <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row">
         {/* Sidebar Navigation */}
@@ -55,18 +47,18 @@ const Account = () => {
             <nav className="space-y-2">
               <NavItem
                 label="My Profile"
-                active={activeTab === 'My Profile'}
-                onClick={() => setActiveTab('My Profile')}
+                active={activeTab === "My Profile"}
+                onClick={() => setActiveTab("My Profile")}
               />
               <NavItem
                 label="Address Book"
-                active={activeTab === 'Address Book'}
-                onClick={() => setActiveTab('Address Book')}
+                active={activeTab === "Address Book"}
+                onClick={() => setActiveTab("Address Book")}
               />
               <NavItem
                 label="My Payment Options"
-                active={activeTab === 'My Payment Options'}
-                onClick={() => setActiveTab('My Payment Options')}
+                active={activeTab === "My Payment Options"}
+                onClick={() => setActiveTab("My Payment Options")}
               />
             </nav>
           </div>
@@ -75,18 +67,18 @@ const Account = () => {
             <nav className="space-y-2">
               <NavItem
                 label="My Returns"
-                active={activeTab === 'My Returns'}
-                onClick={() => setActiveTab('My Returns')}
+                active={activeTab === "My Returns"}
+                onClick={() => setActiveTab("My Returns")}
               />
               <NavItem
                 label="My Cancellations"
-                active={activeTab === 'My Cancellations'}
-                onClick={() => setActiveTab('My Cancellations')}
+                active={activeTab === "My Cancellations"}
+                onClick={() => setActiveTab("My Cancellations")}
               />
               <NavItem
                 label="My Wishlist"
-                active={activeTab === 'My Wishlist'}
-                onClick={() => setActiveTab('My Wishlist')}
+                active={activeTab === "My Wishlist"}
+                onClick={() => setActiveTab("My Wishlist")}
               />
             </nav>
           </div>
@@ -108,7 +100,7 @@ const NavItem = ({ label, active, onClick }) => {
   return (
     <div
       className={`cursor-pointer rounded-lg p-2 font-medium transition-colors duration-200 hover:bg-red-50 hover:text-red-500
-      ${active ? 'bg-red-100 text-red-600' : 'text-gray-600'}`}
+      ${active ? "bg-red-100 text-red-600" : "text-gray-600"}`}
       onClick={onClick}
     >
       {label}
@@ -139,14 +131,11 @@ const ProfileForm = () => {
       <div className="mt-10 flex flex-col items-center justify-end gap-4 md:flex-row">
         <button
           type="button"
-          className="w-full rounded-lg border-2 border-red-500 px-6 py-3 font-medium text-red-500 transition-colors hover:bg-red-50 md:w-auto"
+          className="outline-none px-6 py-3 font-medium text-red-500 cursor-pointer "
         >
           Cancel
         </button>
-        <button
-          type="submit"
-          className="w-full rounded-lg bg-red-500 px-6 py-3 font-medium text-white transition-colors hover:bg-red-600 md:w-auto"
-        >
+        <button type="submit" className="button text-xl rounded">
           Save Changes
         </button>
       </div>
@@ -154,17 +143,17 @@ const ProfileForm = () => {
   );
 };
 
-const FormGroup = ({ label, placeholder, type = 'text' }) => {
+const FormGroup = ({ label, placeholder, type = "text" }) => {
   return (
     <div className="flex flex-col">
       <label className="mb-2 font-semibold text-gray-700">{label}</label>
       <input
         type={type}
-        className="rounded-md border border-gray-300 p-3 placeholder-gray-400 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500"
+        className="contact-account-input"
         placeholder={placeholder}
       />
     </div>
   );
 };
 
-export default Account;
+export default AccountDashbard;
