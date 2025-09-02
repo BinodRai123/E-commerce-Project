@@ -42,17 +42,17 @@ const ContactSection = () => {
               <input
                 type="text"
                 placeholder="Your Name *"
-                className=" px-4 bg-[#f5f5f5] py-2 focus:outline-none"
+                className="contact-account-input"
               />
               <input
                 type="email"
                 placeholder="Your Email *"
-                className=" px-4 bg-[#f5f5f5] py-2 focus:outline-none"
+                className="contact-account-input"
               />
               <input
                 type="tel"
                 placeholder="Your Phone *"
-                className=" px-4 bg-[#f5f5f5] py-2 focus:outline-none"
+                className="contact-account-input"
               />
             </div>
 
@@ -60,7 +60,7 @@ const ContactSection = () => {
             <textarea
               rows="6"
               placeholder="Your Message"
-              className="  px-4 bg-[#f5f5f5] py-2 focus:outline-none "
+              className=" contact-account-input "
             ></textarea>
 
             {/* Submit Button */}
