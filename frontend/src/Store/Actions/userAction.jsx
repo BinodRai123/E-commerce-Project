@@ -1,7 +1,6 @@
 import axios from "../../utils/axios";
 import {loadUser, removeUser} from "../Reducers/userSlicer";
 
-
 export const asyncRegisterUser = (user) => async(dispatch , getstate) => {
     try {
         console.log(user)

@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom"
 import AuthWrapper from "./authWrapper"
 import UnAuthWrapper from "./unAuthWrapper";
 import Contact from "../Pages/contact";
+import PagenotFound from "../Pages/pagenotFound";
 
 const Home = lazy(() => import("../Pages/home"));
 const Products = lazy(() => import("../Pages/products"));
@@ -21,6 +22,9 @@ const AllRoutes = () => {
       <Route path="/register" element={<UnAuthWrapper><Register /></UnAuthWrapper>} />
       <Route path="/login" element={<UnAuthWrapper><Login /></UnAuthWrapper>} />
       <Route path="/logout" element={<AuthWrapper><LogOut /></AuthWrapper>} />
+
+
+      <Route path="*" element={<PagenotFound />} />
     </Routes>
   )
 }
