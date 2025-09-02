@@ -5,7 +5,7 @@ const ContactSection = () => {
     <section className="w-full">
       <div className="flex flex-col md:flex-row md:justify-center gap-8 px-4">
         {/* Left Side - Contact Info */}
-        <div className="md:w-1/4 shadow-md rounded-lg p-6">
+        <div className="md:w-1/4 bg-white shadow-md rounded-lg p-6">
           <div className="mb-6 flex flex-col gap-4">
             <div className="flex items-center gap-5">
               <i class="ri-phone-line size-10 flex items-center justify-center text-red-100 bg-[#DB4444] rounded-full text-xl"></i>
@@ -35,7 +35,7 @@ const ContactSection = () => {
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="w-full md:w-[60%] shadow-md rounded-lg p-6">
+        <div className="md:w-[60%] bg-white shadow-md rounded-lg p-6">
           <form className="flex flex-col gap-4">
             {/* Top Row Inputs */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -64,14 +64,13 @@ const ContactSection = () => {
             ></textarea>
 
             {/* Submit Button */}
-            <div className="flex justify-end">
               <button
                 type="submit"
-                className="button text-xl rounded hover:bg-red-700"
+                className="button text-xl rounded hover:bg-red-700 self-end"
               >
                 Send Message
               </button>
-            </div>
+        
           </form>
         </div>
       </div>
