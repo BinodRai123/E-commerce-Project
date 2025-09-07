@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const DesktopNavView = (user) => {
+const DesktopNavView = ({user}) => {
   return (
       <div className="hidden sm:flex justify-evenly w-[50%] text-[1rem] font-sans">
         <NavLink className={(e) => (e.isActive ? "border-b" : "")} to="/">
