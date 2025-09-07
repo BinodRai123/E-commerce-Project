@@ -17,12 +17,12 @@ const ProductCard = ({ name, price, originalPrice, discount, image }) => {
 
         {/* Delete Icon */}
         <button className="absolute top-4 right-4 size-9 bg-white rounded-full hover:bg-gray-200 cursor-pointer">
-          <i class="ri-delete-bin-6-line text-2xl"></i>
+          <i className="ri-delete-bin-6-line text-2xl"></i>
         </button>
 
         {/* Add to Cart Overlay */}
         <div className="absolute w-full bottom-0 bg-black text-white flex items-center justify-center gap-2 py-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-          <i class="ri-shopping-cart-2-line text-2xl"></i>
+          <i className="ri-shopping-cart-2-line text-2xl"></i>
           <span>Add To Cart</span>
         </div>
       </div>
