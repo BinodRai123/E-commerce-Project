@@ -1,25 +1,30 @@
-import { useReducer } from "react";
+import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 
 const UserDetailForm = () => {
-  const {user} = useSelector(() => useReducer)
+  const {user} = useSelector((state) =>state.userReducer );
+  const {register, handleSubmit} = useForm();
 
   return (
     <>
       <div className="mb-6 flex justify-end text-gray-600">
-        Welcome! Md Rimel
+        Welcome! {user.name}
       </div>
+
       <div>
         <h2 className="mb-6 text-2xl font-bold">Edit Your Profile</h2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <FormGroup label="First Name" placeholder="Md" />
-          <FormGroup label="Last Name" placeholder="Rimel" />
-          <FormGroup label="Email" placeholder="rimel111@gmail.com" />
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <FormGroup label="First Name" placeholder="Md" type={"text"} />
+          <FormGroup label="Last Name" placeholder="Rimel" type={"text"} />
+          <FormGroup label="Email" placeholder="rimel111@gmail.com" type={"email"} />
           <FormGroup
             label="Address"
             placeholder="Kingston, 5236, United State"
+            type={"text"}
           />
         </div>
+        
         <div className="mt-8">
           <h3 className="mb-4 text-xl font-bold">Password Changes</h3>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -48,7 +53,7 @@ const UserDetailForm = () => {
 
 export default UserDetailForm;
 
-const FormGroup = ({ label, placeholder, type = "text" }) => {
+const FormGroup = ({ label, placeholder, type }) => {
   return (
     <div className="flex flex-col">
       <label className="mb-2 font-semibold text-gray-700">{label}</label>
