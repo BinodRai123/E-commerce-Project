@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { asyncUpdateUser } from "../../Store/Actions/userAction"; 
 
 const UserDetailForm = () => {
   const { user } = useSelector((state) => state.userReducer);
+  const dispatch = useDispatch();
   const { register, handleSubmit } = useForm({
     defaultValues: {
       id: user?.id,
@@ -12,13 +15,17 @@ const UserDetailForm = () => {
     },
   });
 
+  const handleUpdateForm = (user) => {
+    dispatch(asyncUpdateUser(user));
+  }
+
   return (
     <>
       <div className="mb-6 flex justify-end text-gray-600">
         Welcome! {user.name}
       </div>
 
-      <div>
+      <form onSubmit={handleSubmit(handleUpdateForm)}>
         <h2 className="mb-6 text-2xl font-bold">Edit Your Profile</h2>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -57,14 +64,14 @@ const UserDetailForm = () => {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <FormGroup
               register={register}
-              name={"password"}
+              name={"current password"}
               label="Current Password"
               type="password"
             />
             <div /> {/* Spacer for layout */}
             <FormGroup
               register={register}
-              name={"changePassword"}
+              name={"password"}
               label="New Password"
               type="password"
             />
@@ -84,11 +91,13 @@ const UserDetailForm = () => {
           >
             Cancel
           </button>
-          <button type="submit" className="button text-xl rounded">
-            Save Changes
-          </button>
+          <input
+            className="button text-xl rounded"
+            type="submit"
+            value={"Save Changes"}
+          />
         </div>
-      </div>
+      </form>
     </>
   );
 };
@@ -96,15 +105,28 @@ const UserDetailForm = () => {
 export default UserDetailForm;
 
 const FormGroup = ({ label, placeholder, type, register, name }) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const isPasswordField = type === "password";
+
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
       <label className="mb-2 font-semibold text-gray-700">{label}</label>
       <input
         {...register(name)}
-        type={type}
+        type={isPasswordField && !showPassword ? "password" : "text"}
         className="contact-account-input"
         placeholder={placeholder}
       />
+      {/* watch password function */}
+      {isPasswordField && (
+        <button
+          type="button"
+          onClick={() => setShowPassword((prev) => !prev)}
+          className="absolute right-3 top-10 text-gray-500 border-0"
+        >
+          {showPassword ? "🙈" : "👁️"}
+        </button>
+      )}
     </div>
   );
 };

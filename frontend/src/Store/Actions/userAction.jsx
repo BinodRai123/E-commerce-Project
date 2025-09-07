@@ -1,37 +1,46 @@
 import axios from "../../utils/axios";
-import {loadUser, removeUser} from "../Reducers/userSlicer";
+import { loadUser, removeUser } from "../Reducers/userSlicer";
 
-export const asyncRegisterUser = (user) => async(dispatch , getstate) => {
-    try {
-        console.log(user)
-        await axios.post("/users", user);
-    } catch (error) {
-        console.log(error);
+export const asyncRegisterUser = (user) => async (dispatch, getstate) => {
+  try {
+    await axios.post("/users", user);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const asyncLoginUser = (user) => async (dispatch, getstate) => {
+  try {
+    const { data } = await axios.get(
+      `http://localhost:3000/users?email=${user.email}&password=${user.password}`
+    );
+    if (data.length > 0) {
+      dispatch(loadUser(data[0]));
+      return { success: true };
+    } else {
+      console.error("this user is not defined");
+      return { success: false, message: "Invalid email or password" };
     }
-}
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
+};
 
-export const asyncLoginUser = (user) => async(dispatch, getstate) => {
-    try {
-        const {data} = await axios.get(`http://localhost:3000/users?email=${user.email}&password=${user.password}`)
-        if(data.length > 0){
-            dispatch(loadUser(data[0]));
-            return {success: true}
-        }
-        else {
-            console.error("this user is not defined");
-            return {success: false, message: "Invalid email or password"};
-        }
-    } catch (error) {
-        return{success: false, message: error.message};
-    }
-}
+export const asyncLogoutUser = () => async (dispatch, getstate) => {
+  try {
+    localStorage.removeItem("user");
+    dispatch(removeUser());
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-
-export const asyncLogoutUser = () => async(dispatch , getstate) => {
-    try {
-        localStorage.removeItem("user");
-        dispatch(removeUser());
-    } catch (error) {
-        console.log(error);
-    }
-}
+export const asyncUpdateUser = (user) => async (dispatch, getstate) => {
+  try {
+    await axios.patch("/users/" + user.id, user);
+    localStorage.setItem("user", JSON.stringify(user));
+    dispatch(loadUser(user));
+  } catch (error) {
+    console.log(error);
+  }
+};
