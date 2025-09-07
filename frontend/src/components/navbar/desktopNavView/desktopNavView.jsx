@@ -16,9 +16,9 @@ const DesktopNavView = ({user}) => {
           <>
             <NavLink
               className={(e) => (e.isActive ? "border-b" : "")}
-              to="/products"
+              to="/wishlist"
             >
-              Products
+              WishList
             </NavLink>
             <NavLink
               className={(e) => (e.isActive ? "border-b" : "")}

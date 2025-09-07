@@ -17,7 +17,6 @@ const categories = [
 ];
 
 const Home = () => {
-  const [open, setOpen] = useState(false);
 
   return (
     <div className="md:flex">
@@ -34,7 +33,7 @@ const Home = () => {
         {/* Hero-Section-Image */}
         <div className="hero-section mt-5 md:mt-0">
           <img
-            className="object-cover object-center w-full aspect-square sm:aspect-video md:aspect-[16/7]"
+            className="object-contain object-center w-full aspect-square sm:aspect-video md:aspect-[16/9]"
             src="/src/assets/hero-section-image/hero-section-image.jpeg"
             alt="Hero"
           />
