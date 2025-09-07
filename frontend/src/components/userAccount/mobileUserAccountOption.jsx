@@ -1,4 +1,4 @@
-const MobileHeader = ({navItems, activeTab, setActiveTab}) => {
+const UserProfileCategoryMobile = ({navItems, activeTab, setActiveTab}) => {
  
   return (
     <div className="mb-4 bg-white flex items-center justify-between rounded-lg p-2 shadow-md md:hidden">
@@ -22,4 +22,4 @@ const MobileHeader = ({navItems, activeTab, setActiveTab}) => {
   );
 };
 
-export default MobileHeader;
+export default UserProfileCategoryMobile;
