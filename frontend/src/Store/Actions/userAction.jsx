@@ -35,11 +35,11 @@ export const asyncLogoutUser = () => async (dispatch, getstate) => {
   }
 };
 
-export const asyncUpdateUser = (user) => async (dispatch, getstate) => {
+export const asyncUpdateUser = (updatedUser) => async (dispatch, getstate) => {
   try {
-    await axios.patch("/users/" + user.id, user);
-    localStorage.setItem("user", JSON.stringify(user));
-    dispatch(loadUser(user));
+    await axios.patch("/users/" + updatedUser.id, updatedUser);
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+    dispatch(loadUser(updatedUser));
   } catch (error) {
     console.log(error);
   }

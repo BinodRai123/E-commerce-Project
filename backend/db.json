@@ -40,7 +40,7 @@
       "id": "iYU4vmeSthvneNQiUI6Hj",
       "name": "roshan gandu",
       "email": "roshan@gmail.com",
-      "password": "123456789",
+      "password": "aa",
       "carts": [
         {
           "productId": null,
@@ -50,8 +50,9 @@
       "last-name": "",
       "address": "",
       "changePassword": "",
-      "updatedPassword": "",
-      "current password": "123456"
+      "updatedPassword": "123",
+      "current password": "123456",
+      "newPassword": "asdf"
     }
   ],
   "products": [
