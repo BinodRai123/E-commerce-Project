@@ -91,7 +91,6 @@ const UserDetailForm = () => {
               label="Current Password"
               type="password"
             />
-            {user.password}
 
             <FormGroup
               register={register}
@@ -134,7 +133,7 @@ export default UserDetailForm;
 const FormGroup = ({ label, placeholder, type, register, name }) => {
   const [showPassword, setShowPassword] = useState(false);
   const isPasswordField = type === "password";
-
+  const currentPassword = label === "Current Password";
 
   return (
     <div className="flex flex-col relative">
@@ -144,6 +143,7 @@ const FormGroup = ({ label, placeholder, type, register, name }) => {
         type={isPasswordField && !showPassword ? "password" : "text"}
         className="contact-account-input"
         placeholder={placeholder}
+        readOnly={currentPassword && true}
       />
       {/* watch password function */}
       {isPasswordField && (
