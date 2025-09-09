@@ -15,12 +15,14 @@ const AddressBook = lazy(() => import("../Pages/Account/addressBook"));
 const AccountDashbard = lazy(() => import("../components/userAccount/accountDashboard"));
 const PaymentOption = lazy(() => import("../Pages/Account/paymentOption"));
 const MyReturns = lazy(() => import("../Pages/Account/orders/myReturns"));
+const UnderWork = lazy(() => import("../Pages/underConstruction"));
 
 const accountRoutes = [
   { path: "myDashboard", element: <AccountDashbard /> },
   { path: "address-book", element: <AddressBook /> },
   { path: "payment-options", element: <PaymentOption /> },
   { path: "myReturns", element: <MyReturns /> },
+  { path: "underWork", element: <UnderWork />}
 ];
 
 const AllRoutes = () => {

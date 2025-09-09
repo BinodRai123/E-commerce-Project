@@ -6,28 +6,17 @@ const AccountAside = ({ activeTab, setActiveTab }) => {
       <div className="rounded-lg bg-white p-6 shadow-lg">
         <h2 className="mb-4 text-xl font-bold">Manage My Account</h2>
         <nav className="space-y-2">
-          <NavLink
-            to="/account/myReturns"
-            className={(e) =>
-              `block cursor-pointer rounded-lg p-2 font-medium transition-colors duration-200 hover:bg-red-50 hover:text-red-500 ${e.isActive ? "bg-red-100 text-red-600" : "text-gray-600"}`
-            }
-          >
-            my Returns
-          </NavLink>
           <NavItem
             label="My Profile"
-            active={activeTab === "My Profile"}
-            onClick={() => setActiveTab("My Profile")}
+            path="myDashboard"
           />
           <NavItem
             label="Address Book"
-            active={activeTab === "Address Book"}
-            onClick={() => setActiveTab("Address Book")}
+            path="address-book"
           />
           <NavItem
             label="My Payment Options"
-            active={activeTab === "My Payment Options"}
-            onClick={() => setActiveTab("My Payment Options")}
+            path="payment-options"
           />
         </nav>
       </div>
@@ -36,18 +25,15 @@ const AccountAside = ({ activeTab, setActiveTab }) => {
         <nav className="space-y-2">
           <NavItem
             label="My Returns"
-            active={activeTab === "My Returns"}
-            onClick={() => setActiveTab("My Returns")}
+            path="myReturns"
           />
           <NavItem
             label="My Cancellations"
-            active={activeTab === "My Cancellations"}
-            onClick={() => setActiveTab("My Cancellations")}
+            path="underWork"
           />
           <NavItem
             label="My Wishlist"
-            active={activeTab === "My Wishlist"}
-            onClick={() => setActiveTab("My Wishlist")}
+            path="underWork"
           />
         </nav>
       </div>
@@ -57,14 +43,17 @@ const AccountAside = ({ activeTab, setActiveTab }) => {
 
 export default AccountAside;
 
-const NavItem = ({ label, active, onClick }) => {
+const NavItem = ({ path, label }) => {
   return (
-    <div
-      className={`cursor-pointer rounded-lg p-2 font-medium transition-colors duration-200 hover:bg-red-50 hover:text-red-500
-      ${active ? "bg-red-100 text-red-600" : "text-gray-600"}`}
-      onClick={onClick}
+    <NavLink
+      to={path}
+      className={(e) =>
+        `block cursor-pointer rounded-lg p-2 font-medium transition-colors duration-200 hover:bg-red-50 hover:text-red-500 ${
+          e.isActive ? "bg-red-100 text-red-600" : "text-gray-600"
+        }`
+      }
     >
       {label}
-    </div>
+    </NavLink>
   );
 };
