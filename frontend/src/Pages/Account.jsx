@@ -46,7 +46,7 @@ const Account = () => {
         />
 
         <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row">
-          {/* Sidebar Navigation */}
+          {/* Sidebar Desktop Navigation */}
           <AccountAside activeTab={activeTab} setActiveTab={setActiveTab} />
 
           {/*All Account Content */}
