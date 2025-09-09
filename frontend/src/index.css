@@ -32,3 +32,12 @@
 .contact-account-input {
   @apply px-4 bg-[#f5f5f5] py-2 focus:outline-none;
 }
+
+.custom-shape-divider-top-1757444495 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
