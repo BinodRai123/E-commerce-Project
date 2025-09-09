@@ -3,6 +3,7 @@ import AccountDashbard from "../components/userAccount/accountDashboard";
 import Footer from "../components/footer/footer";
 import UserProfileCategoryMobile from "../components/userAccount/mobileUserAccountOption";
 import AccountAside from "../components/userAccount/asideAccount";
+import { Outlet } from "react-router-dom";
 
 const Account = () => {
   const [activeTab, setActiveTab] = useState("My Profile");
@@ -48,8 +49,9 @@ const Account = () => {
           {/* Sidebar Navigation */}
           <AccountAside activeTab={activeTab} setActiveTab={setActiveTab} />
 
-          {/* User Details/Account Area */ }
-          <AccountDashbard />
+          {/*All Account Content */}
+          <Outlet />
+
         </div>
       </div>
       <Footer />

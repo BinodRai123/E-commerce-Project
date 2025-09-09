@@ -22,7 +22,7 @@ const DesktopNavView = ({user}) => {
             </NavLink>
             <NavLink
               className={(e) => (e.isActive ? "border-b" : "")}
-              to="/account"
+              to="/account/myDashboard"
             >
               Account
             </NavLink>
