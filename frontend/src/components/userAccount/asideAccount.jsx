@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const AccountAside = ({ activeTab, setActiveTab }) => {
+const AccountAside = () => {
   return (
     <aside className="hidden w-full space-y-4 md:block md:w-1/4 lg:w-1/5">
       <div className="rounded-lg bg-white p-6 shadow-lg">

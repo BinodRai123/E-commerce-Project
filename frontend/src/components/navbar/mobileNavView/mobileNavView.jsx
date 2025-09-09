@@ -55,7 +55,7 @@ const MobileNavView = ({ user }) => {
               </NavLink>
               <NavLink
                 className="block py-2"
-                to="/account/myDashboard"
+                to="/account"
                 onClick={toggleSidebar}
               >
                 Account

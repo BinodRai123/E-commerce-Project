@@ -10,10 +10,10 @@ const Register = lazy(() => import("../Pages/register"));
 const Login = lazy(() => import("../Pages/login"));
 const PagenotFound = lazy(() => import("../Pages/pagenotFound"))
 const Contact = lazy(() => import("../Pages/contact"));
-const Account = lazy(() => import("../Pages/Account"));
-const AddressBook = lazy(() => import("../Pages/Account/addressBook"));
-const AccountDashbard = lazy(() => import("../components/userAccount/accountDashboard"));
-const PaymentOption = lazy(() => import("../Pages/Account/paymentOption"));
+const Account = lazy(() => import("../Pages/Account/Account"));
+const AddressBook = lazy(() => import("../Pages/Account/manageAC/addressBook"));
+const AccountDashbard = lazy(() => import("../Pages/Account/manageAC/accountDashboard"));
+const PaymentOption = lazy(() => import("../Pages/Account/manageAC/paymentOption"));
 const MyReturns = lazy(() => import("../Pages/Account/orders/myReturns"));
 const UnderWork = lazy(() => import("../Pages/underConstruction"));
 
@@ -36,6 +36,7 @@ const AllRoutes = () => {
 
 
       <Route path="/account" element={<AuthWrapper><Account /></AuthWrapper>}>
+        <Route index element={<AccountDashbard />} />
         {accountRoutes.map(({ path, element }) => (
           <Route key={path} path={path} element={element} />
         ))}

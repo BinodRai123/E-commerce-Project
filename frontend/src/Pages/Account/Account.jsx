@@ -1,8 +1,7 @@
 import { useState } from "react";
-import AccountDashbard from "../components/userAccount/accountDashboard";
-import Footer from "../components/footer/footer";
-import UserProfileCategoryMobile from "../components/userAccount/mobileUserAccountOption";
-import AccountAside from "../components/userAccount/asideAccount";
+import Footer from "../../components/footer/footer";
+import UserProfileCategoryMobile from "../../components/userAccount/mobileUserAccountOption";
+import AccountAside from "../../components/userAccount/asideAccount";
 import { Outlet } from "react-router-dom";
 
 const Account = () => {
@@ -47,7 +46,7 @@ const Account = () => {
 
         <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row">
           {/* Sidebar Desktop Navigation */}
-          <AccountAside activeTab={activeTab} setActiveTab={setActiveTab} />
+          <AccountAside />
 
           {/*All Account Content */}
           <Outlet />

@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import UserDetailForm from "./userDetailForm";
-import { asyncLogoutUser } from "../../Store/Actions/userAction";
+import UserDetailForm from "../../../components/userAccount/userDetailForm";
+import { asyncLogoutUser } from "../../../Store/Actions/userAction";
 
 const AccountDashbard = () => {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const AccountDashbard = () => {
 
   return <>
     {/* Main Content Area */}
-        <main className="w-full rounded-lg bg-white p-6 shadow-lg md:w-3/4 lg:w-4/5">
+        <main className="rounded-lg bg-white p-6 shadow-lg md:w-3/4 lg:w-3/4">
           <div>
             {/* User Account Form */}
             <UserDetailForm />

@@ -16,13 +16,15 @@
       "id": "nZoBWDV16D8bm3MxddAdA",
       "name": "binod",
       "email": "binod@gmail.com",
-      "password": "55555",
+      "password": "12345",
       "carts": [
         {
           "productId": null,
           "count": 0
         }
-      ]
+      ],
+      "address": "",
+      "last-name": ""
     },
     {
       "id": "y1bm3HCfyI0GYHYYvHWmC",
